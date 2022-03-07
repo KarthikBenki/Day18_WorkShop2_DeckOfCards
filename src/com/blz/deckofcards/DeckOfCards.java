@@ -9,11 +9,11 @@ import java.util.Scanner;
  * @author : Karthik M C
  */
 public class DeckOfCards {
-    static String[] suit = {"Clubs", "Diamonds", "Hearts", "Spades"};
-    static String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-    static String[] deckOfCard = new String[suit.length * rank.length];
-    static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Player> playerList = new ArrayList<>();
+    public static String[] suit = {"Clubs", "Diamonds", "Hearts", "Spades"};
+    public static String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+    public static String[] deckOfCard = new String[suit.length * rank.length];
+    public static Scanner scanner = new Scanner(System.in);
+    public static ArrayList<Player> playerList = new ArrayList<>();
 
     /*
      * @purpose : Ability to Arrange Deck of cards uniquely
@@ -53,12 +53,12 @@ public class DeckOfCards {
         System.out.println("Enter the number of players,range must be from 2 to 4");
         int playerCount = scanner.nextInt();
         if (playerCount >= 2 && playerCount <= 4) {
-            Player player = new Player();
+
             for(int i =0;i<playerCount;i++){
                 System.out.println("Enter player "+(i+1)+" name");
-                player.setPlayerName(scanner.next());
-                player.setPlayerNo(i+1);
-                playerList.add(player);
+                String name = scanner.next();
+                int playerNo = (i+1);
+                playerList.add(new Player(name,playerNo));
             }
             System.out.println(playerCount + " players will play the game");
         } else {

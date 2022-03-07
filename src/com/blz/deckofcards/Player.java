@@ -9,9 +9,7 @@ public class Player {
         this.playerNo = playerNo;
     }
 
-    public Player() {
 
-    }
 
     public String getPlayerName() {
         return playerName;
