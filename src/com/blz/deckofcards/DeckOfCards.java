@@ -1,6 +1,7 @@
 package com.blz.deckofcards;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -79,6 +80,22 @@ public class DeckOfCards {
         for (int i = 0; i < playerCount; i++) {
             Player p = playerList.get(i);
             System.out.println("\nPlayer "+p.getPlayerNo()+"  " +p.getPlayerName() + " Getting card.............");
+        }
+    }
+
+    /*
+     * @purpose : Ability to shuffle the cards
+     * @param : No parameters
+     * @function : Shuffle the organised deck of cards
+     * @return : No return Value;
+     */
+    public void shuffleCards() {
+        Random random = new Random();
+        for (int i = 0; i < deckOfCard.length; i++) {
+            int index = random.nextInt(deckOfCard.length);
+            String temp = deckOfCard[i];
+            deckOfCard[i] = deckOfCard[index];
+            deckOfCard[index] = temp;
         }
     }
     public static void main(String[] args) {
