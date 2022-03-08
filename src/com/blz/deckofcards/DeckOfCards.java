@@ -160,6 +160,22 @@ public class DeckOfCards {
         System.out.println();
     }
 
+    /*
+     * @purpose : Ability to display cards
+     * @param : player count
+     * @function : Verifying the types of cards at each player
+     * @return : No return Value;
+     */
+    public void displayCards(int playerCount) {
+        for (int i = 0; i < playerCount; i++) {
+            System.out.println("player " + (i + 1) + " has ");
+            for (int j = 0; j < playerCardStrings[i].length; j++) {
+                System.out.println(playerCardStrings[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to deck of cards simulation");
         DeckOfCards deckOfCards = new DeckOfCards();
@@ -172,5 +188,6 @@ public class DeckOfCards {
         System.out.println(playerList);
         deckOfCards.cardDistribution(playerCount);
         deckOfCards.verifyCards(playerCount);
+        deckOfCards.displayCards(playerCount);
     }
 }
